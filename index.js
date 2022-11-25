@@ -6,6 +6,8 @@ const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
+	GatewayIntentBits.GuildMessages,
+	GatewayIntentBits.MessageContent,
   ]
 });
 
@@ -29,6 +31,7 @@ client.once(Events.ClientReady, c => {
   console.log(`ready! logged in as ${c.user.tag}`)
 })
 
+
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
@@ -47,7 +50,11 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
-
+client.on(Events.MessageCreate, msg =>{
+	console.log(msg.channel.name)
+	console.log(msg.author.username)
+	console.log(msg.content)
+})
 
 
 
