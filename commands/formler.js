@@ -22,7 +22,7 @@ module.exports = {
                 //{ name: 'lineære regression', value: 'lineære_regression.js' },
             )),
         async execute(interaction) {
-            const chosenFormulaPath = path.join(__dirname, "../formel_samlingerne");
+            const chosenFormulaPath = path.join(__dirname, "/formel_samlingerne");
             const chosenFormula = fs.readdirSync(chosenFormulaPath).filter(file => file.endsWith('.js'));
             console.log(chosenFormula)
 
