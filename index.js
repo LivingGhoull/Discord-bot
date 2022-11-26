@@ -11,6 +11,7 @@ const client = new Client({
   ]
 });
 
+// The bot loads all of the command files so it would be able to use them
 client.commands = new Collection
 
 const commandsPath = path.join(__dirname, 'commands');
@@ -23,15 +24,16 @@ for (const file of commandFiles) {
   if ('data' in command && 'execute' in command) {
     client.commands.set(command.data.name, command)
   } else {
-    console.log(`Warning the command at ${filePath} is missing or somthing is wrong with it`)
+    console.log(`Warning the command at ${filePath} is missing or something is wrong with it`)
   }
 }
 
+//When the client is ready and op and going 
 client.once(Events.ClientReady, c => {
   console.log(`ready! logged in as ${c.user.tag}`)
 })
 
-
+//When using a command
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
@@ -50,12 +52,13 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
+//Listen for all messages on the server
 client.on(Events.MessageCreate, msg =>{
-	console.log(msg.channel.name)
-	console.log(msg.author.username)
-	console.log(msg.content)
+	//console.log(msg.channel.name)
+	//console.log(msg.author.username)
+	//console.log(msg.content)
 })
 
 
-
+// Makes the bot go online
 client.login(process.env.TOKEN);

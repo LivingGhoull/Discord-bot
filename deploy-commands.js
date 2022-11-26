@@ -2,6 +2,8 @@ const { REST, Routes } = require('discord.js');
 const fs = require('node:fs');
 require('dotenv').config()
 
+// We register the commands that are created to a specific discord server with the bot
+
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
