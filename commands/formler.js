@@ -11,7 +11,6 @@ module.exports = {
 		option
             .setName('input')
 			.setDescription('The input to echo back')
-            .setRequired(true)
             .addChoices(
                 { name: 'regning', value: 'regning.js' },
 				{ name: 'brøkregning', value: 'brøkregning.js' },
