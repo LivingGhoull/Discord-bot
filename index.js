@@ -8,6 +8,7 @@ const client = new Client({
     GatewayIntentBits.Guilds,
 	GatewayIntentBits.GuildMessages,
 	GatewayIntentBits.MessageContent,
+	GatewayIntentBits.GuildMembers,
   ]
 });
 
@@ -52,13 +53,18 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
+//When people join the server 
+client.on(Events.GuildMemberAdd, async member =>{
+	const channel = client.channels.cache.get(process.env.WELCOMECHANNEL)
+	await channel.send(`Welcome to the server <@${member.id}>`)
+})
+
 //Listen for all messages on the server
 client.on(Events.MessageCreate, msg =>{
 	//console.log(msg.channel.name)
 	//console.log(msg.author.username)
 	//console.log(msg.content)
 })
-
 
 // Makes the bot go online
 client.login(process.env.TOKEN);
