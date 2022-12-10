@@ -28,7 +28,6 @@ module.exports = {
             const chosenFormula = fs.readdirSync(chosenFormulaPath).filter(file => file.endsWith('.js'));
 
             for(const file of chosenFormula){
-                console.log(file)
                 if (file === interaction.options._hoistedOptions[0].value) {
                     await interaction.reply(require(path.join(chosenFormulaPath, file)))
                     break

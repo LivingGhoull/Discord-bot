@@ -1,76 +1,56 @@
-GuildMember {
-  guild: <ref *1> Guild {
-    id: '1036948089237426176',
-    name: 'Teknikfags eksamen server',
-    icon: '93d93d18bdce81bafe700321320b27e3',
-    features: [ 'APPLICATION_COMMAND_PERMISSIONS_V2' ],
-    commands: GuildApplicationCommandManager {
-      permissions: [ApplicationCommandPermissionsManager],
-      guild: [Circular *1]
-    },
-    members: GuildMemberManager { guild: [Circular *1] },
-    channels: GuildChannelManager { guild: [Circular *1] },
-    bans: GuildBanManager { guild: [Circular *1] },
-    roles: RoleManager { guild: [Circular *1] },
-    presences: PresenceManager {},
-    voiceStates: VoiceStateManager { guild: [Circular *1] },
-    stageInstances: StageInstanceManager { guild: [Circular *1] },
-    invites: GuildInviteManager { guild: [Circular *1] },
-    scheduledEvents: GuildScheduledEventManager { guild: [Circular *1] },
-    available: true,
-    shardId: 0,
-    splash: null,
-    banner: null,
-    description: null,
-    verificationLevel: 0,
-    vanityURLCode: null,
-    nsfwLevel: 0,
-    premiumSubscriptionCount: 0,
-    discoverySplash: null,
-    memberCount: 4,
-    large: false,
-    premiumProgressBarEnabled: false,
-    applicationId: null,
-    afkTimeout: 300,
-    afkChannelId: null,
-    systemChannelId: '1036948089757507627',
-    premiumTier: 0,
-    widgetEnabled: null,
-    widgetChannelId: null,
-    explicitContentFilter: 0,
-    mfaLevel: 0,
-    joinedTimestamp: 1667816842208,
-    defaultMessageNotifications: 0,
-    systemChannelFlags: SystemChannelFlagsBitField { bitfield: 0 },
-    maximumMembers: 500000,
-    maximumPresences: null,
-    maxVideoChannelUsers: 25,
-    approximateMemberCount: null,
-    approximatePresenceCount: null,
-    vanityURLUses: null,
-    rulesChannelId: null,
-    publicUpdatesChannelId: null,
-    preferredLocale: 'en-US',
-    ownerId: '188270995189006336',
-    emojis: GuildEmojiManager { guild: [Circular *1] },
-    stickers: GuildStickerManager { guild: [Circular *1] }
-  },
-  joinedTimestamp: 1670160848137,
-  premiumSinceTimestamp: null,
-  nickname: null,
-  pending: false,
-  communicationDisabledUntilTimestamp: null,
-  _roles: [],
-  user: User {
-    id: '1037261769862815755',
-    bot: false,
-    system: false,
-    flags: UserFlagsBitField { bitfield: 0 },
-    username: 'TestUser',
-    discriminator: '5804',
-    avatar: null,
-    banner: undefined,
-    accentColor: undefined
-  },
-  avatar: null
-}
+const math = require('mathjs')
+
+module.exports = num => {
+    try {
+        let numArray = num.split(' ')
+        let sign = numArray[1]
+        let newNum = 'test'
+        
+        if (sign == '+' || sign == '-') {
+            console.log(numArray[0].split('/')[1])
+            console.log(numArray[2].split('/')[1])
+
+            if (numArray[0].split('/')[1] != numArray[2].split('/')[1]) {
+                let fraction1 = parseInt(numArray[0].split('/')[1])
+                let fraction2 = parseInt(numArray[2].split('/')[1])
+                
+                let nævner = () => {
+                    for (let i = 1; fraction1 < fraction2; i++) {
+                        let fraction = fraction1 * i
+                        if (fraction == fraction2) {
+                            return i
+                        }
+                        else if (fraction > fraction2) {
+                            return false;
+                        }
+                                  
+                    }
+                }
+            
+                if (nævner()) {
+                    firstMath = math.evaluate(`(${numArray[0].split('/')[0]} * ${nævner()})`)
+                    secoundMath = math.evaluate(`(${numArray[0].split('/')[1]} * ${nævner()})`)
+                    thirdMath = math.evaluate(`${firstMath} ${sign} ${numArray[2].split('/')[0]}`)
+
+                    trin1 = `(${numArray[0].split('/')[0]} * ${nævner()})/(${numArray[0].split('/')[1]} * ${nævner()}) ${sign} ${numArray[2]}`
+                    trin2 = `${firstMath}/${secoundMath} ${sign} ${numArray[2]}`
+
+                    return newNum = `${num}\n${trin1}\n${trin2}\n${thirdMath}/${secoundMath}`
+                }
+                else {
+                    return newNum = "Not"
+                }
+            }
+
+            
+
+
+            console.log('out of the first test')
+        }
+        return `${newNum}`
+    } catch (error) {
+        return "ERROR: " + error
+    }
+} 
+
+

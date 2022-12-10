@@ -12,10 +12,12 @@ module.exports = {
 			.setDescription('The input to echo back')
             .addChoices(
                 { name: 'grundlæggende beregning', value: 'grundlæggende_beregning.js' },
+                { name: 'brøkregning', value: 'brøkregning.js' },
                 { name: 'algebra', value: 'algebra.js' },
-                //{ name: 'funktioner', value: 'funktioner.js' },
-				//{ name: 'lineære funktioner', value: 'lineære_funktioner.js' },
-                //{ name: 'lineære regression', value: 'lineære_regression.js' },
+                { name: 'ligninger', value: 'funktioner.js' },
+				{ name: 'funktioner', value: 'lineære_funktioner.js' },
+                { name: 'lineære funktion', value: 'lineære_regression.js' },
+                { name: 'lineære regression', value: 'lineære_regression.js' },
             )
             .setRequired(true))
             
