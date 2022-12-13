@@ -1,8 +1,8 @@
 require('dotenv').config()
 const fs = require('node:fs')
 const path = require('node:path')
-
 const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
+const badWords = require('./mutebel_words');
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -27,6 +27,7 @@ for (const file of commandFiles) {
   } else {
     console.log(`Warning the command at ${filePath} is missing or something is wrong with it`)
   }
+
 }
 
 //When the client is ready and op and going 
@@ -61,9 +62,23 @@ client.on(Events.GuildMemberAdd, async member =>{
 
 //Listen for all messages on the server
 client.on(Events.MessageCreate, msg =>{
-	//console.log(msg.channel.name)
-	//console.log(msg.author.username)
-	//console.log(msg.content)
+	let content = msg.content.split(' ')
+	content.forEach(newWord => {
+		badWords.forEach(badWord => {
+			if (newWord == badWord) {
+				
+			
+			}
+		});
+	});
+
+	
+	console.log(msg.channel.name)
+	console.log(msg.author.username)
+	console.log(msg.content)
+
+	
+
 })
 
 // Makes the bot go online
