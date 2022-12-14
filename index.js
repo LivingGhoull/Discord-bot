@@ -64,6 +64,20 @@ client.on(Events.MessageCreate, msg =>{
 	//console.log(msg.channel.name)
 	//console.log(msg.author.username)
 	//console.log(msg.content)
+
+	let user = msg.id
+
+	msg.guild.members.fetch().then(fetchedMembers => {
+		console.log(fetchedMembers)
+
+		fetchedMembers.forEach(founduser => {
+			if(user === founduser.guild);
+			{
+				 //console.log("guilduser" + founduser.guild.user.id + " user" + user)
+			}
+		});
+		
+	});
 })
 
 // Makes the bot go online
