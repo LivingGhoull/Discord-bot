@@ -40,7 +40,7 @@ module.exports = num => {
                     let trin2 = `${firstfraktorT}/${firstfraktorN} ${sign} ${numArray[2]}`
                     let trin3 = `${firstfraktorT}+${numArray[2].split('/')[0]}/${firstfraktorN}`
 
-                    return newNum = `${num}\n${trin1}\n${trin2}\n${trin3}\n${fraktorPlusMinus}/${firstfraktorN}\n`
+                    return newNum = `Beregning der skal udføres: ${num}\n${trin1}\n${trin2}\n${trin3}\nResultat af beregning: ${fraktorPlusMinus}/${firstfraktorN}\n`
                 }
                 else {
                     let arr1 = []
@@ -93,7 +93,7 @@ module.exports = num => {
                     let trin2 = `${firstfraktorT}/${firstfraktorN} ${sign} ${secondfraktorT}/${secondfraktorN}`
                     let trin3 = `${firstfraktorT}+${secondfraktorT}/${firstfraktorN}`
 
-                    return newNum = `${num}\n${trin1}\n${trin2}\n${trin3}\n${fraktorPlusMinus}/${firstfraktorN}`
+                    return newNum = `Beregning der skal udføres: ${num}\n${trin1}\n${trin2}\n${trin3}\nResultat af beregning: ${fraktorPlusMinus}/${firstfraktorN}`
                 }
             }            
             else{
@@ -107,7 +107,7 @@ module.exports = num => {
 
             let trin1 = `(${numArray[0].split('/')[0]} * ${numArray[2].split('/')[0]}) / (${numArray[0].split('/')[1]} * ${numArray[2].split('/')[1]})`
             
-            return newNum = `${num}\n${trin1}\n ${fraktorT}/${fraktorN}`
+            return newNum = `Beregning der skal udføres: ${num}\n${trin1}\nResultat af beregning:  ${fraktorT}/${fraktorN}`
         }
         else if (sign == '/') {
             let fraktorT = math.evaluate(`(${numArray[0].split('/')[0]} * ${numArray[2].split('/')[1]})`)
@@ -115,7 +115,7 @@ module.exports = num => {
 
             let trin1 = `(${numArray[0].split('/')[0]} * ${numArray[2].split('/')[1]}) / (${numArray[0].split('/')[1]} * ${numArray[2].split('/')[0]})`
             
-            return newNum = `${num}\n${trin1}\n ${fraktorT}/${fraktorN}`
+            return newNum = `Beregning der skal udføres: ${num}\n${trin1}\nResultat af beregning: ${fraktorT}/${fraktorN}`
         }
         else{
             return "ERROR: tegn kan ikke bruges"

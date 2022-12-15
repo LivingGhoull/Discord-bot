@@ -1,4 +1,5 @@
 require('dotenv').config()
+const ms = require('ms')
 const fs = require('node:fs')
 const path = require('node:path')
 const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
@@ -61,38 +62,19 @@ client.on(Events.GuildMemberAdd, async member =>{
 })
 
 //Listen for all messages on the server
-client.on(Events.MessageCreate, msg =>{
-	let content = msg.content.split(' ')
-	content.forEach(newWord => {
-		badWords.forEach(badWord => {
-			if (newWord == badWord) {
-				
-			
+client.on(Events.MessageCreate, async msg =>{
+	let user = msg.author.id
+  	await msg.guild.members.fetch().then(fetchedMembers => {
+		fetchedMembers.forEach(e => {
+			if(user == e.id) {
+				if (badWords(msg)){
+					let member = e.guild.members.cache.get(user)
+					msg.delete()
+					member.timeout(ms('1m'), "used a bad word")
+				}
 			}
-		});
-	});
-
-	
-	console.log(msg.channel.name)
-	console.log(msg.author.username)
-	console.log(msg.content)
-
-	
-
-
-	let user = msg.id
-
-	msg.guild.members.fetch().then(fetchedMembers => {
-		console.log(fetchedMembers)
-
-		fetchedMembers.forEach(founduser => {
-			if(user === founduser.guild);
-			{
-				 //console.log("guilduser" + founduser.guild.user.id + " user" + user)
-			}
-		});
-		
-	});
+		})
+	})
 })
 
 // Makes the bot go online

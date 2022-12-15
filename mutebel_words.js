@@ -1,3 +1,15 @@
 const badWords = ['cunt', 'fuck', 'fucking', 'bitch', 'die', 'dø', 'kælling'] 
 
-module.exports = badWords
+module.exports = msg => {
+    let check = false
+    let content = msg.content.split(' ')
+	content.forEach(newWord => {
+		badWords.forEach(badWord => {
+			if (newWord == badWord) {
+                check = true
+			}
+		});
+	});
+    return check
+}
+	

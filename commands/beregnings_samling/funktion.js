@@ -12,7 +12,7 @@ module.exports = num => {
             xSplit = num.split('=')[1]
             if (xSplit.includes('x')) {
                 let xInNum = xSplit.replace('x', x)
-                return `${num}\n${xInNum}\n${math.evaluate(xInNum).toString()}`
+                return `Beregning der skal udføres: ${num}\n${xInNum}\nResultat af beregning: ${math.evaluate(xInNum).toString()}`
             }
             else{
                 return "ERROR: x findes ikke i funktionen"
