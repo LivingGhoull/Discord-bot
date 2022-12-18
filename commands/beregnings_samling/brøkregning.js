@@ -5,7 +5,7 @@ module.exports = num => {
         let numArray = num.split(' ')
 
         let sign = numArray[1]
-        let newNum = 'fejl'
+        let newNum = 'Fejl'
 
         let fraction1 = parseInt(numArray[0].split('/')[1])
         let fraction2 = parseInt(numArray[2].split('/')[1])
@@ -121,7 +121,7 @@ module.exports = num => {
             return "ERROR: tegn kan ikke bruges"
         }
     } catch (error) {
-        return "ERROR: " + error
+        return ` ${num} \nDin beregnign er skrevet forkert op`
     }
 } 
 

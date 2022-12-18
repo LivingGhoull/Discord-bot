@@ -16,10 +16,7 @@ module.exports = {
                 { name: 'grundlæggende beregning', value: 'grundlæggende_beregning.js' },
 				{ name: 'brøkregning', value: 'brøkregning.js' },
                 { name: 'algebra', value: 'algebra.js' },
-				{ name: 'ligninger', value: 'ligninger.js' },
-                //{ name: 'funktioner', value: 'funktioner.js' },
-				//{ name: 'lineære funktioner', value: 'lineære_funktioner.js' },
-                //{ name: 'lineære regression', value: 'lineære_regression.js' },
+				{ name: 'funktion', value: 'funktion.js' },
             )
             .setRequired(true)),
 

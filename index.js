@@ -58,7 +58,7 @@ client.on(Events.InteractionCreate, async interaction => {
 //When people join the server 
 client.on(Events.GuildMemberAdd, async member =>{
 	const channel = client.channels.cache.get(process.env.WELCOMECHANNEL)
-	await channel.send(`Welcome to the server <@${member.id}>`)
+	await channel.send(`Velkommen til serveren <@${member.id}>`)
 })
 
 //Listen for all messages on the server
@@ -70,7 +70,7 @@ client.on(Events.MessageCreate, async msg =>{
 				if (badWords(msg)){
 					let member = e.guild.members.cache.get(user)
 					msg.delete()
-					member.timeout(ms('1m'), "used a bad word")
+					member.timeout(ms('1m'), "Du brugte bandeord der er forbudt")
 				}
 			}
 		})

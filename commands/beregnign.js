@@ -8,16 +8,13 @@ module.exports = {
 	.setDescription('Replies with your input!')
 	.addStringOption(option =>
 		option
-            .setName('input')
+            .setName('formel')
 			.setDescription('The input to echo back')
             .addChoices(
                 { name: 'grundlæggende beregning', value: 'grundlæggende_beregning.js' },
                 { name: 'brøkregning', value: 'brøkregning.js' },
                 { name: 'algebra', value: 'algebra.js' },
 				{ name: 'funktion', value: 'funktion.js' },
-                { name: 'ligninger', value: 'funktioner.js' },
-                { name: 'lineære funktion', value: 'lineære_regression.js' },
-                { name: 'lineære regression', value: 'lineære_regression.js' },
             )
             .setRequired(true))
             
