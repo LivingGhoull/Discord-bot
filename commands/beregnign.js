@@ -8,7 +8,7 @@ module.exports = {
 	.setDescription('Replies with your input!')
 	.addStringOption(option =>
 		option
-            .setName('input')
+            .setName('formel')
 			.setDescription('The input to echo back')
             .addChoices(
                 { name: 'grundlæggende beregning', value: 'grundlæggende_beregning.js' },
