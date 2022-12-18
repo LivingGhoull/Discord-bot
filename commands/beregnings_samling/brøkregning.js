@@ -121,7 +121,7 @@ module.exports = num => {
             return "ERROR: tegn kan ikke bruges"
         }
     } catch (error) {
-        return "ERROR: " + error
+        return ` ${num} \nDin beregnign er skrevet forkert op`
     }
 } 
 

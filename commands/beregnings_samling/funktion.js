@@ -22,6 +22,6 @@ module.exports = num => {
             return "Din f(x) er ikke skrivet rigtigt"
         }
     } catch (error) {
-        return error
+        return ` ${num} \nDin beregnign er skrevet forkert op`
     }
 } 

@@ -1,4 +1,5 @@
-module.exports = `Algebra er det man normalt kalder beregning af bogstaver. Måden og beregne algebra er præcis det samme, som når man beregner tal.
+module.exports = `
+Algebra er det man normalt kalder beregning af bogstaver. Måden og beregne algebra er præcis det samme, som når man beregner tal.
 
 Eksempel a+a+2b+3c+b = 2a+3b+3c.
 
@@ -10,5 +11,4 @@ Det første man gør er at gange ind i parentesen sådan man fjerner den. Så nu
 
 Så reducere man udtrykket til der står til sidst
 3a+4b+ab
-
 `
