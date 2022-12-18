@@ -11,10 +11,10 @@ Hvis begge nævner er allerede den samme kan man forsætte til trin 2.
 2/3 + 4/3
 
 Hvis den mindste nævner kan gange med et nummer der ville give den andens brøk nævner så gang man de nummer med ens nævner og tæller.
-2/3 + 4/6 => 2*2/2*3 => 4/6 + 4/6
+2/3 + 4/6 => 2 * 2/2 * 3 => 4/6 + 4/6
  
 Hvis ingen af de to forrige eksembler fungerede skal man finde et tal som begger nævner går op i og ganges med deres repektable nævner og tæller. 
-2/3 + 1/4 => 4*2/4*3 / 3*1/3*4 => 8/12 / 3/12
+2/3 + 1/4 => 4 * 2/4 * 3 / 3 * 1/3 * 4 => 8/12 / 3/12
 
 Trin 2
 Man skal så plus eller minus begge tæller med hinanden så man får brøkens resultat.
