@@ -6,7 +6,6 @@ module.exports = msg => {
 	content.forEach(newWord => {
 		badWords.forEach(badWord => {
 			if (newWord.toLowerCase().includes(badWord)) {
-				console.log(newWord);
                 check = true
 			}
 		});
