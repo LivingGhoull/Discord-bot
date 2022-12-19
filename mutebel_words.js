@@ -5,7 +5,8 @@ module.exports = msg => {
     let content = msg.content.split(' ')
 	content.forEach(newWord => {
 		badWords.forEach(badWord => {
-			if (newWord.toLowerCase() == badWord) {
+			if (newWord.toLowerCase().includes(badWord)) {
+				console.log(newWord);
                 check = true
 			}
 		});
